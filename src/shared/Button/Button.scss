@@ -1,0 +1,28 @@
+@import '../../style/colors.scss';
+@import '../../style/fonts.scss';
+
+.btn {
+    background-color: $color-primary;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+
+    &__Introduction {
+        align-self: start;
+        justify-self: start;
+    }
+}
