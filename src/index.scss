@@ -1,3 +1,7 @@
+@import './style/breakpoints.scss';
+@import './style/fonts.scss';
+@import './style/colors.scss';
+
 *,
 *::after,
 *::before {
@@ -7,14 +11,17 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; // 10px / 16px = 62.5% => 1rem = 10px
     box-sizing: border-box;
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
 }
 
 body {
-    color: gray;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
 }
