@@ -10,7 +10,7 @@ type RealtorProps = {
 
 const Realtor = (props: RealtorProps) => {
     const realtors = props.realtorsList.map(realtor => (
-        <React.Fragment key={realtor.name + Date.now()}>
+        <React.Fragment key={realtor.id}>
             <img
                 src={realtor.img}
                 alt={realtor.name.trim()}

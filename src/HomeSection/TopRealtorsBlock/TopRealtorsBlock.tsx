@@ -4,11 +4,11 @@ import Realtor from './Realtor/Realtor';
 import './TopRealtorsBlock.scss';
 import '../../style/typography.scss';
 import { IRealtor } from './Realtor/Realtor.model';
-import { realtorsList } from '../../shared/helpers';
+import { realtorsData } from '../../shared/helpers';
 
 const TopRealtorsBlock = () => {
     const [topRealtors, setTopRealtors] = useState([] as IRealtor[]);
-    useEffect(() => setTopRealtors(realtorsList()), []);
+    useEffect(() => setTopRealtors(realtorsData()), []);
 
     return (
         <div className='TopRealtors'>
