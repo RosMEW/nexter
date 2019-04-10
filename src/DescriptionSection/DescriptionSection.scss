@@ -1,4 +1,4 @@
-@import '../style/colors.scss';
+@import '../style/mixins.scss';
 
 .Description {
     grid-column: center-start / center-end;
@@ -18,9 +18,7 @@
 
     &__icon {
         grid-row: 1 / span 2;
-        fill: $color-primary;
-        width: 4.5rem;
-        height: 4.5rem;
+        @include svgStyle();
         transform: translateY(-1rem);
     }
 

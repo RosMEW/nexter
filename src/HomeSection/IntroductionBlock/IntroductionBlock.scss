@@ -58,4 +58,9 @@
             filter: brightness(70%);
         }
     }
+
+    &__btn {
+        align-self: start;
+        justify-self: start;
+    }
 }

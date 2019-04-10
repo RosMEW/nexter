@@ -14,7 +14,7 @@ const IntroductionBlock = () => {
             />
             <h3 className='heading-3'>Your own home :</h3>
             <h1 className='heading-1'>The ultimate personal freedom</h1>
-            <Button buttonClass='Introduction' text='View our properties' />
+            <Button classes='Introduction__btn' text='View our properties' />
             <div className='Introduction__seenon-text'>Seen on</div>
             <div className='Introduction__seenon-logos'>
                 <img src='./images/Logos/logo-bbc.png' alt='Logo-BBC' />
