@@ -7,6 +7,7 @@ import './HouseCard.scss';
 
 type HouseCardProps = {
     properties: IHouseCard[];
+    onClick: () => void;
 };
 
 const HouseCard = (props: HouseCardProps) => {
@@ -39,7 +40,11 @@ const HouseCard = (props: HouseCardProps) => {
                 <SvgIcon icon='key' />
                 <p>{house.price}</p>
             </div>
-            <Button text='Contact realtor' classes='House__btn' />
+            <Button
+                text='Contact realtor'
+                classes='House__btn'
+                onClick={props.onClick}
+            />
         </div>
     ));
 
