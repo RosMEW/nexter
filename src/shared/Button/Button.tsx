@@ -4,12 +4,13 @@ import './Button.scss';
 
 type ButtonProps = {
     text: string;
-    buttonClass: string;
+    classes?: string;
+    onClick?: () => void;
 };
 
 const Button = (props: ButtonProps) => {
     return (
-        <button className={`btn btn__${props.buttonClass}`}>
+        <button className={`btn ${props.classes}`} onClick={props.onClick}>
             {props.text}
         </button>
     );
