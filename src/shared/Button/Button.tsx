@@ -6,13 +6,17 @@ type ButtonProps = {
     text: string;
     classes?: string;
     onClick?: () => void;
+    href?: string;
 };
 
 const Button = (props: ButtonProps) => {
     return (
-        <button className={`btn ${props.classes}`} onClick={props.onClick}>
+        <a
+            className={`btn ${props.classes}`}
+            onClick={props.onClick}
+            href={props.href}>
             {props.text}
-        </button>
+        </a>
     );
 };
 

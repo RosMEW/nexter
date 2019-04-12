@@ -21,7 +21,7 @@ const PropertiesSection = () => {
 
     return (
         <React.Fragment>
-            <section className='Properties'>
+            <section className='Properties' id='properties-section'>
                 <HouseCard properties={properties} onClick={showRealtorModal} />
             </section>
             {showModal ? <RealtorModal onClick={hideRealtorModal} /> : null}
