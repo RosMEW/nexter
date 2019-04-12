@@ -16,7 +16,7 @@ const TestimonialContent = () => {
                 Tenetur distinctio necessitatibus pariatur voluptatibus. Quidem
                 consequatur harum volupta!
             </p>
-            <Button text='Find your own home' />
+            <Button text='Find your own home' href='#properties-section' />
         </div>
     );
 };
