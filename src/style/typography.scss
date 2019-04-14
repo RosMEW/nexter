@@ -1,0 +1,57 @@
+@import './fonts.scss';
+@import './colors.scss';
+
+// HEADING
+
+@mixin heading($font-size: 1.6rem, $color: $color-grey-light-1) {
+    font-family: $font-display;
+    font-weight: 400;
+    font-size: $font-size;
+    color: $color;
+}
+
+.heading-1 {
+    @include heading(4.5rem);
+    line-height: 1;
+}
+
+.heading-2 {
+    @include heading(4rem);
+    font-style: italic;
+    line-height: 1;
+
+    &--dark {
+        color: $color-grey-dark-1;
+    }
+}
+
+.heading-3 {
+    @include heading(1.6rem, $color-primary);
+    text-transform: uppercase;
+}
+
+.heading-4 {
+    @include heading(1.9rem);
+
+    &--dark {
+        color: $color-grey-dark-1;
+    }
+}
+
+// MARGIN-BOTTOM
+
+.mb-sm {
+    margin-bottom: 2rem;
+}
+
+.mb-md {
+    margin-bottom: 3rem;
+}
+
+.mb-lg {
+    margin-bottom: 4rem;
+}
+
+.mb-hg {
+    margin-bottom: 8rem;
+}

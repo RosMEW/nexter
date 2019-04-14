@@ -1,0 +1,7 @@
+@import './colors.scss';
+
+@mixin svgStyle ($width: 4.5rem, $height: 4.5rem, $fill-color: $color-primary) {
+    width: $width;
+    height: $height;
+    fill: $fill-color;
+}

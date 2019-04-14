@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  render() {
+import HomeSection from './HomeSection/HomeSection';
+import DescriptionSection from './DescriptionSection/DescriptionSection';
+import TestimonialSection from './TestimonialSection/TestimonialSection';
+import PropertiesSection from './PropertiesSection/PropertiesSection';
+import GallerySection from './GallerySection/GallerySection';
+import Footer from './Footer/Footer';
+import Sidebar from './Sidebar/Sidebar';
+import './App.scss';
+
+const App = () => {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div className='Container'>
+            <Sidebar />
+            <HomeSection />
+            <DescriptionSection />
+            <TestimonialSection />
+            <PropertiesSection />
+            <GallerySection />
+            <Footer />
+        </div>
     );
-  }
-}
+};
 
 export default App;
