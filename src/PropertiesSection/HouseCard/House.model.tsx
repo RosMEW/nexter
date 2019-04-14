@@ -1,4 +1,4 @@
-export type IHouseCard = {
+export type House = {
     id: string;
     img: string;
     name: string;

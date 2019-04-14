@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { IRealtor } from './Realtor.model';
-import './Realtor.scss';
+import { Realtor } from './Realtor.model';
+import './RealtorCard.scss';
 import '../../../style/typography.scss';
 
-type RealtorProps = {
-    realtorsList: IRealtor[];
+type RealtorCardProps = {
+    realtors: Realtor[];
 };
 
-const Realtor = (props: RealtorProps) => {
-    const realtors = props.realtorsList.map(realtor => (
+const RealtorCard = (props: RealtorCardProps) => {
+    const realtors = props.realtors.map(realtor => (
         <React.Fragment key={realtor.id}>
             <img
                 src={realtor.img}
@@ -26,4 +26,4 @@ const Realtor = (props: RealtorProps) => {
     return <React.Fragment>{realtors}</React.Fragment>;
 };
 
-export default Realtor;
+export default RealtorCard;

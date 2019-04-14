@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Button from '../../shared/Button/Button';
-import { IHouseCard } from './HouseCard.model';
+import { House } from './House.model';
 import SvgIcon from '../../shared/SvgIcon';
 import './HouseCard.scss';
 
 type HouseCardProps = {
-    properties: IHouseCard[];
+    properties: House[];
     onClick: () => void;
 };
 

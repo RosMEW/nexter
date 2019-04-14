@@ -1,4 +1,4 @@
-export type IRealtor = {
+export type Realtor = {
     id: string;
     img: string;
     name: string;
