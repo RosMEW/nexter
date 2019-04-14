@@ -2,108 +2,79 @@ import React from 'react';
 
 import './GallerySection.scss';
 
+const pictures = [
+    {
+        name: 'gal-1.jpeg',
+        alt: 'Gallery image 1'
+    },
+    {
+        name: 'gal-2.jpeg',
+        alt: 'Gallery image 2'
+    },
+    {
+        name: 'gal-3.jpeg',
+        alt: 'Gallery image 3'
+    },
+    {
+        name: 'gal-4.jpeg',
+        alt: 'Gallery image 4'
+    },
+    {
+        name: 'gal-5.jpeg',
+        alt: 'Gallery image 5'
+    },
+    {
+        name: 'gal-6.jpeg',
+        alt: 'Gallery image 6'
+    },
+    {
+        name: 'gal-7.jpeg',
+        alt: 'Gallery image 7'
+    },
+    {
+        name: 'gal-8.jpeg',
+        alt: 'Gallery image 8'
+    },
+    {
+        name: 'gal-9.jpeg',
+        alt: 'Gallery image 9'
+    },
+    {
+        name: 'gal-10.jpeg',
+        alt: 'Gallery image 10'
+    },
+    {
+        name: 'gal-11.jpeg',
+        alt: 'Gallery image 11'
+    },
+    {
+        name: 'gal-12.jpeg',
+        alt: 'Gallery image 12'
+    },
+    {
+        name: 'gal-13.jpeg',
+        alt: 'Gallery image 13'
+    },
+    {
+        name: 'gal-14.jpeg',
+        alt: 'Gallery image 14'
+    }
+];
+
 const GallerySection = () => {
     return (
         <section className='Gallery'>
-            <figure className='Gallery__item Gallery__item--1'>
-                <img
-                    src='./images/gallery/gal-1.jpeg'
-                    alt='Gallery image 1'
-                    className='Gallery__img'
-                />
-                >
-            </figure>
-            <figure className='Gallery__item Gallery__item--2'>
-                <img
-                    src='./images/gallery/gal-2.jpeg'
-                    alt='Gallery image 2'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--3'>
-                <img
-                    src='./images/gallery/gal-3.jpeg'
-                    alt='Gallery image 3'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--4'>
-                <img
-                    src='./images/gallery/gal-4.jpeg'
-                    alt='Gallery image 4'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--5'>
-                <img
-                    src='./images/gallery/gal-5.jpeg'
-                    alt='Gallery image 5'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--6'>
-                <img
-                    src='./images/gallery/gal-6.jpeg'
-                    alt='Gallery image 6'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--7'>
-                <img
-                    src='./images/gallery/gal-7.jpeg'
-                    alt='Gallery image 7'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--8'>
-                <img
-                    src='./images/gallery/gal-8.jpeg'
-                    alt='Gallery image 8'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--9'>
-                <img
-                    src='./images/gallery/gal-9.jpeg'
-                    alt='Gallery image 9'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--10'>
-                <img
-                    src='./images/gallery/gal-10.jpeg'
-                    alt='Gallery image 10'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--11'>
-                <img
-                    src='./images/gallery/gal-11.jpeg'
-                    alt='Gallery image 11'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--12'>
-                <img
-                    src='./images/gallery/gal-12.jpeg'
-                    alt='Gallery image 12'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--13'>
-                <img
-                    src='./images/gallery/gal-13.jpeg'
-                    alt='Gallery image 13'
-                    className='Gallery__img'
-                />
-            </figure>
-            <figure className='Gallery__item Gallery__item--14'>
-                <img
-                    src='./images/gallery/gal-14.jpeg'
-                    alt='Gallery image 14'
-                    className='Gallery__img'
-                />
-            </figure>
+            {pictures.map((pic, index) => (
+                <figure
+                    className={'Gallery__item Gallery__item--' + (index + 1)}
+                    key={index + 1}>
+                    <img
+                        src={`images/gallery/${pic.name}`}
+                        alt={pic.alt}
+                        className='Gallery__img'
+                    />
+                </figure>
+            ))}
         </section>
     );
 };
