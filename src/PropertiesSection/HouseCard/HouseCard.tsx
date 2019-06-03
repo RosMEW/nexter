@@ -6,13 +6,15 @@ import SvgIcon from '../../shared/SvgIcon';
 import './HouseCard.scss';
 
 type HouseCardProps = {
-    properties: House[];
+    house: House;
     onClick: () => void;
 };
 
 const HouseCard = (props: HouseCardProps) => {
-    const houses = props.properties.map(house => (
-        <div className='House' key={house.id}>
+    const { house, onClick } = props;
+
+    return (
+        <div className='House'>
             <img
                 src={`/images/Properties/${house.img}.jpeg`}
                 alt={house.img}
@@ -43,12 +45,10 @@ const HouseCard = (props: HouseCardProps) => {
             <Button
                 text='Contact realtor'
                 classes='House__btn'
-                onClick={props.onClick}
+                onClick={onClick}
             />
         </div>
-    ));
-
-    return <React.Fragment>{houses}</React.Fragment>;
+    );
 };
 
 export default HouseCard;

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import './DescriptionSection.scss';
-import '../style/typography.scss';
 import { Quality } from './Quality.model';
 import SvgIcon from '../shared/SvgIcon';
+import './DescriptionSection.scss';
+import '../style/typography.scss';
 
-const qualitiesData = [
+const qualitiesData: Quality[] = [
     {
         icon: 'global',
         id: `${Date.now()}_global`,
@@ -51,18 +51,21 @@ const qualitiesData = [
 ];
 
 const DescriptionSection = () => {
-    const [qualities, setqualities] = useState([] as Quality[]);
-    useEffect(() => setqualities(qualitiesData), []);
+    const [qualities] = useState(qualitiesData);
 
-    const qualitiesList = qualities.map(quality => (
-        <div className='Quality' key={quality.id}>
-            <SvgIcon icon={quality.icon} classes='Quality__icon' />
-            <h4 className='heading-4 heading-4--dark'>{quality.heading}</h4>
-            <p className='Quality__text'>{quality.text}</p>
-        </div>
-    ));
-
-    return <section className='Description'>{qualitiesList}</section>;
+    return (
+        <section className='Description'>
+            {qualities.map(quality => (
+                <div className='Quality' key={quality.id}>
+                    <SvgIcon icon={quality.icon} classes='Quality__icon' />
+                    <h4 className='heading-4 heading-4--dark'>
+                        {quality.heading}
+                    </h4>
+                    <p className='Quality__text'>{quality.text}</p>
+                </div>
+            ))}
+        </section>
+    );
 };
 
 export default DescriptionSection;

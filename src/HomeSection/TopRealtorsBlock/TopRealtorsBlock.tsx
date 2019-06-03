@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import RealtorCard from './RealtorCard/RealtorCard';
+import { getRealtors } from '../../shared/helpers';
 import './TopRealtorsBlock.scss';
 import '../../style/typography.scss';
-import { Realtor } from './RealtorCard/Realtor.model';
-import { getRealtors } from '../../shared/helpers';
 
 const TopRealtorsBlock = () => {
-    const [topRealtors, setTopRealtors] = useState([] as Realtor[]);
-    useEffect(() => setTopRealtors(getRealtors()), []);
+    const [topRealtors] = useState(getRealtors());
 
     return (
         <div className='TopRealtors'>

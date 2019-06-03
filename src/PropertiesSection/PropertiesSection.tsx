@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import './PropertiesSection.scss';
 import HouseCard from './HouseCard/HouseCard';
-import { House } from './HouseCard/House.model';
 import { getProperties } from '../shared/helpers';
 import RealtorModal from './RealtorModal/RealtorModal';
 
 const PropertiesSection = () => {
-    const [properties, setProperties] = useState([] as House[]);
+    const [properties] = useState(getProperties());
     const [showModal, setShowModal] = useState(false);
-    useEffect(() => setProperties(getProperties()), []);
 
     const showRealtorModal = () => {
         setShowModal(true);
@@ -22,9 +21,22 @@ const PropertiesSection = () => {
     return (
         <React.Fragment>
             <section className='Properties' id='properties-section'>
-                <HouseCard properties={properties} onClick={showRealtorModal} />
+                {properties.map(house => (
+                    <HouseCard
+                        house={house}
+                        onClick={showRealtorModal}
+                        key={house.id}
+                    />
+                ))}
             </section>
-            {showModal ? <RealtorModal onClick={hideRealtorModal} /> : null}
+            <CSSTransition
+                in={showModal}
+                timeout={200}
+                unmountOnExit
+                mountOnEnter
+                classNames='RealtorModal'>
+                <RealtorModal onClick={hideRealtorModal} />
+            </CSSTransition>
         </React.Fragment>
     );
 };
