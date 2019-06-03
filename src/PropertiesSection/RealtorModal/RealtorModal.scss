@@ -1,53 +1,60 @@
 @import '../../style/colors.scss';
 
-.Backdrop {
-    background-color: rgba(#000, 0.5);
-    grid-column: 1 / -1;
-    z-index: 100;
+.RealtorModal {
     width: 100vw;
     height: 100vh;
+    z-index: 50;
     position: fixed;
-}
 
-.Modal {
-    background-color: $color-grey-light-1;
-    position: fixed;
-    z-index: 200;
-    padding: 6rem;
-    border: 1rem solid $color-primary;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    grid-gap: 4rem;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-
-    &__img {
-        grid-column: 1 / 2;
-        width: 100%;
-        border-radius: 0.5rem;
+    .Backdrop {
+        background-color: rgba(#000, 0.5);
+        grid-column: 1 / -1;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
     }
 
-    &__info {
-        display: flex;
-        flex-direction: column;
+    .Modal {
+        background-color: $color-grey-light-1;
+        position: fixed;
+        z-index: 200;
+        padding: 6rem;
+        border: 1rem solid $color-primary;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-gap: 4rem;
+        align-content: center;
+        justify-items: center;
         align-items: center;
-    }
 
-    &__name {
-        font-size: 2rem;
-    }
+        &__img {
+            grid-column: 1 / 2;
+            width: 100%;
+            border-radius: 0.5rem;
+        }
 
-    &__title {
-        font-size: 1.3rem;
-    }
+        &__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    &__tel,
-    &__email {
-        font-size: 1.6rem;
+        &__name {
+            font-size: 2rem;
+        }
+
+        &__title {
+            font-size: 1.3rem;
+        }
+
+        &__tel,
+        &__email {
+            font-size: 1.6rem;
+        }
     }
 }

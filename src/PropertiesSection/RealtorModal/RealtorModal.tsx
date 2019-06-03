@@ -8,7 +8,7 @@ type RealtorModalProps = {
 
 const RealtorModal = (props: RealtorModalProps) => {
     return (
-        <React.Fragment>
+        <div className='RealtorModal'>
             <div className='Backdrop' onClick={props.onClick} />
             <div className='Modal' onClick={props.onClick}>
                 <img
@@ -23,7 +23,7 @@ const RealtorModal = (props: RealtorModalProps) => {
                     <div className='Modal__email'>kimbrown@email.com</div>
                 </div>
             </div>
-        </React.Fragment>
+        </div>
     );
 };
 
