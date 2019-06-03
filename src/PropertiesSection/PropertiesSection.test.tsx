@@ -1,62 +1,60 @@
 import React from 'react';
-import {
-    render,
-    cleanup,
-    fireEvent,
-    RenderResult
-} from 'react-testing-library';
+import { render, cleanup, fireEvent } from 'react-testing-library';
 
 import PropertiesSection from './PropertiesSection';
 
 const setup = () => {
     cleanup();
     const wrapper = render(<PropertiesSection />);
-    return { wrapper };
-};
-
-const openModal = (wrapper: RenderResult) => {
-    const onClickHouseCardButton = wrapper.container.getElementsByClassName(
-        'House__btn'
-    )[0];
-    fireEvent.click(onClickHouseCardButton);
+    return {
+        wrapper,
+        houseCardButton: wrapper.container.getElementsByClassName(
+            'House__btn'
+        )[0],
+        getBackdrop: () =>
+            wrapper.container.getElementsByClassName('Backdrop')[0],
+        getModal: () => wrapper.container.getElementsByClassName('Modal')[0]
+    };
 };
 
 describe('<PropertiesSection />', () => {
-    const { wrapper } = setup();
-    const backdrop = wrapper.container.getElementsByClassName('Backdrop');
-    const modal = wrapper.container.getElementsByClassName('Modal');
-
     it('should not render RealtorModal by default', () => {
-        expect(backdrop).toHaveLength(0);
-        expect(modal).toHaveLength(0);
+        const { getBackdrop, getModal } = setup();
+        expect(getBackdrop()).toBeFalsy();
+        expect(getModal()).toBeFalsy();
     });
 
     it('should render RealtorModal when click on HouseCard button', () => {
-        openModal(wrapper);
+        const { houseCardButton, getBackdrop, getModal } = setup();
+        fireEvent.click(houseCardButton);
 
-        expect(backdrop).toHaveLength(1);
-        expect(modal).toHaveLength(1);
+        expect(getBackdrop()).toBeTruthy();
+        expect(getModal()).toBeTruthy();
     });
 
-    it('should hide RealtorModal when click on backdrop', () => {
-        const onClickBackdrop = wrapper.container.getElementsByClassName(
-            'Backdrop'
-        )[0];
-        fireEvent.click(onClickBackdrop);
+    it('should hide RealtorModal when click on backdrop', async () => {
+        const { houseCardButton, getBackdrop, getModal } = setup();
+        fireEvent.click(houseCardButton);
+        fireEvent.click(getBackdrop());
 
-        expect(backdrop).toHaveLength(0);
-        expect(modal).toHaveLength(0);
+        await wait(200);
+        expect(getBackdrop()).toBeFalsy();
+        expect(getModal()).toBeFalsy();
     });
 
-    it('should hide RealtorModal when click on modal', () => {
-        openModal(wrapper);
+    it('should hide RealtorModal when click on modal', async () => {
+        const { houseCardButton, getBackdrop, getModal } = setup();
+        fireEvent.click(houseCardButton);
+        fireEvent.click(getModal());
 
-        const onClickModal = wrapper.container.getElementsByClassName(
-            'Modal'
-        )[0];
-        fireEvent.click(onClickModal);
-
-        expect(backdrop).toHaveLength(0);
-        expect(modal).toHaveLength(0);
+        await wait(200);
+        expect(getBackdrop()).toBeFalsy();
+        expect(getModal()).toBeFalsy();
     });
 });
+
+function wait(ms: number) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}

@@ -6,3 +6,21 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 7rem;
 }
+
+.RealtorModal-enter {
+    opacity: 0;
+}
+
+.RealtorModal-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.RealtorModal-exit {
+    opacity: 1;
+}
+
+.RealtorModal-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}
