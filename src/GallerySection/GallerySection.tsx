@@ -69,7 +69,7 @@ const GallerySection = () => {
                     className={'Gallery__item Gallery__item--' + (index + 1)}
                     key={index + 1}>
                     <img
-                        src={`images/gallery/${pic.name}`}
+                        src={`/images/Gallery/${pic.name}`}
                         alt={pic.alt}
                         className='Gallery__img'
                     />
